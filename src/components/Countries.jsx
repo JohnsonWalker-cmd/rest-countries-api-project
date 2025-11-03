@@ -3,7 +3,7 @@ export default function Countries(){
     const [ countries , setCountries] = useState(null)
 
     useEffect(()=> {
-        fetch('/src/data.json')
+        fetch('/data.json')
           .then(response => response.json())
           .then(data => {
             setCountries(data)
