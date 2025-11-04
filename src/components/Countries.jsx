@@ -1,6 +1,10 @@
 import { useState , useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 export default function Countries({getCountry, selectedRegion }){
     const [ countries , setCountries] = useState(null)
+
+    const navigate = useNavigate();
 
     useEffect(()=> {
         fetch('/data.json')
@@ -27,6 +31,7 @@ export default function Countries({getCountry, selectedRegion }){
            filteredCountries.map((country , index) => (
             <div 
             key={index}
+            onClick={()=> navigate(`/country/${country.name}`)}
             className='bg-white shadow-sm rounded-sm flex flex-col'
             >
                 <img 
