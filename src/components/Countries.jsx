@@ -1,5 +1,5 @@
 import { useState , useEffect } from 'react'
-export default function Countries(){
+export default function Countries({getCountry, selectedRegion }){
     const [ countries , setCountries] = useState(null)
 
     useEffect(()=> {
@@ -10,10 +10,21 @@ export default function Countries(){
           })
     } , []);
 
+    const filteredCountries = countries?.filter(country => {
+        const matchesSearch = country.name.toLowerCase().includes(getCountry.toLowerCase())
+
+        const filterByRegion = country.region === selectedRegion || selectedRegion === ''
+        
+
+        return matchesSearch && filterByRegion;
+    });
+
+
+
     return (
         <main className="flex items-center flex-col gap-6 mt-6">
-           {countries &&
-           countries.map((country , index) => (
+           {filteredCountries &&
+           filteredCountries.map((country , index) => (
             <div 
             key={index}
             className='bg-white shadow-sm rounded-sm flex flex-col'
