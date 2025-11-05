@@ -13,6 +13,9 @@ export default function CountryDetails(){
             const foundCountry = data.find(item => item.name === name);
             setCountry(foundCountry)
         })
+        .catch((error)=> {
+            console('Promise rejected with:' , error)
+        })
     } , [name])
 
     if(!country) return <p className='mt-10 text-center'>Loading...</p>

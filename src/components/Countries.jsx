@@ -12,6 +12,9 @@ export default function Countries({getCountry, selectedRegion }){
           .then(data => {
             setCountries(data)
           })
+          .catch((error)=> {
+            console.log('Promise rejected with:' , error)
+          })
     } , []);
 
     const filteredCountries = countries?.filter(country => {
