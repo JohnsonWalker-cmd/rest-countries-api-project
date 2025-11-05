@@ -10,6 +10,9 @@
   --color-white: hsl(0, 100%, 100%);
 }
 
+/* Add this to enable dark mode */
+@variant dark (&:where(.dark, .dark *));
+
 body{
   background-color: hsl(0, 0%, 99%);
   font-family: "Nunito Sans", sans-serif;

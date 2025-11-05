@@ -6,14 +6,14 @@ export default function Filter({setSelectedRegion}){
 
     return (
         <div className="w-fit relative mx-4">
-            <div className="mt-6 mb-2  bg-white rounded-md p-4 flex items-center gap-6 shadow-sm w-fit cursor-pointer">
+            <div className="mt-6 mb-2  bg-white rounded-md p-4 flex items-center gap-6 shadow-sm w-fit cursor-pointer dark:bg-grey-950 dark:text-grey-400">
                 <h3 className="text-md">Filter by Region</h3>
                 <i 
-                className={`fa-solid ${dropdown ? "fa-angle-down ": "fa-angle-up"} text-sm`}
+                className={`fa-solid ${dropdown ? "fa-angle-down ": "fa-angle-up"} text-sm dark:text-grey-400`}
                 onClick={()=> setDropdown(!dropdown)}
                 ></i>
             </div>
-            {dropdown && <div className="absolute  bg-white rounded-md p-4 shadow-sm w-full">
+            {dropdown && <div className="absolute  bg-white rounded-md p-4 shadow-sm w-full dark:text-grey-400 dark:bg-grey-950">
                 <ul className="space-y-2">
                     <li className="cursor-pointer hover:font-semibold" onClick={()=> {setSelectedRegion('Africa'); setDropdown(false)}}>Africa</li>
                     <li className="cursor-pointer hover:font-semibold" onClick={()=> {setSelectedRegion('America'); setDropdown(false)}}>America</li>
