@@ -30,6 +30,7 @@ export default function App(){
   return (
     <Router>
       <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+      
       <Routes>
         <Route
           path='/'
@@ -43,7 +44,7 @@ export default function App(){
             </div>
           }
         />
-        <Route path='/country/:name' element={<CountryDetails/>}/>
+          <Route path='/country/:name' element={<CountryDetails/>}/>
       </Routes>
     </Router>
   )
