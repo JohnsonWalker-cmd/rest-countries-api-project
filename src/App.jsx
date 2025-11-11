@@ -29,23 +29,31 @@ export default function App(){
 
   return (
     <Router>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
-      
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <div className='dark:bg-gray-900'>
-              <div className='flex md:justify-between md:items-center flex-col md:flex-row'>
-                <Searchbar getCountry={getCountry} setGetCountry={setGetCountry}/>
-                <Filter selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion}/>
+      <div className="min-h-screen bg-white dark:bg-gray-800">
+        <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+        
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <div className='dark:bg-gray-900'>
+                <div className='flex md:justify-between md:items-center flex-col md:flex-row'>
+                  <Searchbar getCountry={getCountry} setGetCountry={setGetCountry}/>
+                  <Filter selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion}/>
+                </div>
+                <Countries getCountry={getCountry} selectedRegion={selectedRegion}/>
               </div>
-              <Countries getCountry={getCountry} selectedRegion={selectedRegion}/>
-            </div>
-          }
-        />
-          <Route path='/country/:name' element={<CountryDetails/>}/>
-      </Routes>
+            }
+          />
+            
+              <Route path='/country/:name' element={
+                <div className="min-h-screen dark:bg-gray-800">
+                  <CountryDetails/>
+                </div>
+                }
+                />
+        </Routes>
+      </div>
     </Router>
   )
 }
