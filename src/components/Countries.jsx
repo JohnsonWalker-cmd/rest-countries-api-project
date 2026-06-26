@@ -29,7 +29,7 @@ export default function Countries({getCountry, selectedRegion }){
 
 
     return (
-        <main className="grid md:grid-cols-4 grid-cols-1 gap-6 mt-6 mx-4">
+        <main className="grid md:grid-cols-4 grid-cols-1 gap-6 mt-6 mx-4 z-10">
            {filteredCountries &&
            filteredCountries.map((country , index) => (
             <div 

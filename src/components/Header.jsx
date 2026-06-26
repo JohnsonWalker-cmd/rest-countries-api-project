@@ -1,7 +1,7 @@
 export default function Header({darkMode , setDarkMode}){
     console.log('darkMode:', darkMode)
     return (
-        <header className="bg-white shadow-sm max-w-full flex items-center justify-between px-4 py-4 dark:bg-gray-800 ">
+        <header className="bg-white shadow-sm w-full flex items-center justify-between px-4 py-4 dark:bg-gray-800 z-20">
             <h1 className="font-medium text-grey-950 text-xl dark:text-white">Where in this world?</h1>
             <div className="flex items-center justify-center gap-2 cursor-pointer" onClick={()=> {
                     setDarkMode(!darkMode)}
